@@ -1,0 +1,127 @@
+<DOCTYPE! html>
+<html>
+    <head>
+        <title>The Stock cars</title>
+        <link rel="stylesheet" type="text/css" href="main.css">
+    </head>
+    <body>
+        <div class="heading">
+            <h1>Order</h1>
+        </div>
+        <div class="naviga">
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="products.html">Products</a>
+            <a href="order.html">Order</a>
+        </div>
+        <div class="major_content">
+            <div class="column side">
+                <h3 class="special_offer">Special offer!!!</h3>
+                <p>From today the "Striker" is going to be dilivered instataneously after booking</p>
+            </div>
+            <div class="column middle">
+                <h2>Order us now!</h2>
+                <form name="form1">
+                    <center><h4>Select your car and order now!</h4></center>
+                    <!--Entering the user name-->
+                    <p>Enter name:<input type="text" size="20" maxlength="20" id="user_name" value="Full name please1"></p>
+                    <!--Entering the model name-->
+                    <p>Enter the model:<input type="text" size="20" maxlength="20" id="model_name" value="Full model please1"></p>
+                    <!--Entering the pincode-->
+                    <p>Enter the pin code of the debit/credit card:<input type="password" size="4" maxlength="4" id="pin_code" value="****"></p>
+                    <!--Entering the method of payment-->
+                    <p>Method of payment: <input type="radio" id="payment_method_one" value="credit">Credit<input type="radio" id="payment_method_two" value="debit">Debit</p>
+                    <!--Entering the feature name-->
+                    <p>Please pick feature:</p>
+                    <ol>
+                        <li><input type="checkbox" id="luxury" value="luxury_module">Luxury Module</li>
+                        <li><input type="checkbox" id="sports" value="sports_module">Sports Module</li>
+                        <li><input type="checkbox" id="racing" value="racing_module">Proffesional racing Module</li>
+                        <li>Family Module</li>
+                        <ul>
+                            <li><input type="checkbox" id="child_seat" value="child_seat_module">Child Seat</li>
+                            <li><input type="checkbox" id="extra_entertainment" value="extra_entertainment_module">Extra Entertainment</li>
+                        </ul>
+                    </ol>
+                    <!--Entering the country name-->
+                    <p>Enter the country of dilevery:</p>
+                    <select id="mySelect" align="center">
+                        <option value="England">England</option>
+                        <option value="Australia">Australia</option>
+                        <option value="Germany">Germany</option>
+                        <option value="Japan">Japan</option>
+                        <option value="Netherlands">Netherlands</option>
+                    </select>
+                    <!--Entering the comments-->
+                    <p>Type in you comments:<textarea id="user_comments" cols="40" rows="4">comments here!</textarea></p>
+                    <!--Buttons-->
+                    <p>
+                        <input type="reset" size="20" value="Reset">
+                        <button id="subButton" type="button">Order your dream ride!</button>
+                    </p>
+                </form>
+                <script language="JavaScript">
+                    function get_the_form(){
+                        //Accsessing the username
+                        var user_name = document.getElementById('user_name').value;
+                        //Accsessing the model name
+                        var model_name = document.getElementById('model_name').value;
+                        //Accsessing the method of payment
+                        if (document.getElementById('payment_method_one').checked){
+                            var payment_method_text = "credit"
+                        }
+                        if (document.getElementById('payment_method_two').checked){
+                            var payment_method_text = "debit"
+                        } 
+                        //Accsessing the features
+                        var luxury_text = ""
+                        if (document.getElementById('luxury').checked){
+                            var luxury_text = " Luxury module "
+                        }
+                        var sports_text = ""
+                        if (document.getElementById('sports').checked){
+                            var sports_text = " Sports module "
+                        }
+                        var racing_text = ""
+                        if (document.getElementById('racing').checked){
+                            var racing_text = " Proffesional racing module "
+                        }
+                        var child_seat_text = ""
+                        if (document.getElementById('child_seat').checked){
+                            var child_seat_text = " Child Seat "
+                        }
+                        var extra_entertainment_text = ""
+                        if (document.getElementById('extra_entertainment').checked){
+                            var extra_entertainment_text = " Extra Entertainment module "
+                        }
+                        //Accsessing the country name
+                        var countries = document.getElementById('mySelect').selectedIndex;
+                        if (countries == 0){
+                            var countries_text = "England"
+                        }
+                        if (countries == 1){
+                            var countries_text = "Australia"
+                        }
+                        if (countries == 2){
+                            var countries_text = "Germany"
+                        }
+                        if (countries == 3){
+                            var countries_text = "Japan"
+                        }
+                        if (countries == 4){
+                            var countries_text = "Netherlands"
+                        }
+                        var final_text = "You, " + user_name + " are formally welcomed to the Stock Cars world. " + model_name + " is a renowned car model. Your payment will be done through " + payment_method_text + " card. The extra features that will be added inside car are " +  luxury_text + sports_text + racing_text + child_seat_text + extra_entertainment_text + ". Your car will be dilevered to " + countries_text + " in the stated time. Thanks for placing your trust on The Stock Cars.";                          
+                        alert(final_text);
+                    }
+                    var subButton = document.getElementById('subButton');
+                    subButton.addEventListener('click', get_the_form , false);
+                </script>
+            </div>
+            <div class="column side">
+                <h3>Side column</h3>
+                <p>This is the place where side notes go</p>
+            </div>        
+        </div>
+    </body>
+</html>                                                                                                                         
